@@ -23,3 +23,4 @@ Django Rest Framework, version
 * Database connection (MariaDB)
 * Async Work & Work Queue Management (Celery & RabbitMQ)
 * Session Management (JWT)
+* Web Server connection (NGINX)

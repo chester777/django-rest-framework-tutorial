@@ -9,10 +9,8 @@ class Instructor(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     instructor_name = models.CharField(max_length=100, blank=False)
 
-
-    def __str__(self):
+    def __str__(self): # 인스턴스 생성 시 아래의 값이 return 되어 인스턴스의 이름이 된
         return self.instructor_name
-
 
     class Meta:
         ordering = ('instructor_name',)
@@ -25,10 +23,8 @@ class LectureRoom(models.Model):
     lecture_room_latitude = models.FloatField()
     lecture_room_longitude = models.FloatField()
 
-
     def __str__(self):
         return self.lecture_room_name
-
 
     class Meta:
         ordering = ('lecture_room_name', 'lecture_room_address',)
@@ -49,13 +45,13 @@ class Lecture(models.Model):
     lecture_title = models.CharField(max_length=100, blank=False)
     start_datetime = models.DateTimeField(blank=False)
     end_datetime = models.DateTimeField(blank=False)
+
+    # Relationship 할 경우, 각 인스턴스를 save() 한 후에 해야 함.
     instructors = models.ManyToManyField(Instructor)
     lecture_room = models.ForeignKey(LectureRoom, on_delete=models.SET_NULL, blank=True, null=True)
 
-
     def __str__(self):
         return self.lecture_title
-
 
     class Meta:
         ordering = ('lecture_title', 'start_datetime', 'end_datetime', )
