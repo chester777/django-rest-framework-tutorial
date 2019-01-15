@@ -9,7 +9,7 @@ class Instructor(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     instructor_name = models.CharField(max_length=100, blank=False)
 
-    def __str__(self): # 인스턴스 생성 시 아래의 값이 return 되어 인스턴스의 이름이 된
+    def __str__(self): # 인스턴스 생성 시 아래의 값이 return 되어 인스턴스의 이름이 됨
         return self.instructor_name
 
     class Meta:
@@ -33,7 +33,7 @@ class LectureRoom(models.Model):
 class Lecture(models.Model):
     '''
     Lecture 모델과 Instructor 모델의 관계 : Many To Many
-    - 하나의 강의에 여러 강사가 참여 할 수 있고, 동시에 한명의 강사가 여러 강의에 참여 할 수 있으므로!
+    - 하나의 강의에 여러 강사가 참여 할 수 있고, 동시에 한명의 강사가 여러 강의에 참여 할 수 있으므로,
       Django 에서 Many To Many 관계를 갖는 경우, ManyToManyField 를 사용한다.
 
     Lecture 모델과 LectureRoom 모델의 관계 : One To Many
