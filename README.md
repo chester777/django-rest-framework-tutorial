@@ -20,5 +20,6 @@ Django Rest Framework, version
 * Relationships & Hyperlink APIs
 * Viewsets & Routers
 * Schema & Client Libraries
+* Database connection (MariaDB)
 * Async Work & Work Queue Management (Celery & RabbitMQ)
 * Session Management (JWT)
