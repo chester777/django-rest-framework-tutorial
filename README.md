@@ -11,9 +11,10 @@ Django Rest Framework, version
 ## 구현 완료 기능
 
 ## 구현 중인 기능
+* Design Model
 * Serialization
 
-## 예정 기능
+## 구현 예정 기능
 * Request & Response
 * Class based views
 * Authentication & Permissions
